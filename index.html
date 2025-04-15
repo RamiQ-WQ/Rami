@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبات زمنية - أدوات حساب الوقت والتاريخ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-clock"></i> الحاسبات الزمنية</h1>
+            <p>أدوات متكاملة لحساب الوقت والتاريخ بكل دقة</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="main-menu">
+                <li><a href="#age-calculators"><i class="fas fa-birthday-cake"></i> حاسبات العمر</a></li>
+                <li><a href="#date-calculators"><i class="fas fa-calendar-alt"></i> حاسبات التاريخ</a></li>
+                <li><a href="#time-calculators"><i class="fas fa-hourglass-half"></i> حاسبات الوقت</a></li>
+                <li><a href="#conversion"><i class="fas fa-exchange-alt"></i> محولات التاريخ</a></li>
+                <li><a href="#health-calculators"><i class="fas fa-heartbeat"></i> حاسبات صحية</a></li>
+                <li><a href="#education-calculators"><i class="fas fa-graduation-cap"></i> حاسبات دراسية</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="quick-nav">
+        <button class="quick-nav-btn"><i class="fas fa-bars"></i> التنقل السريع</button>
+        <div class="quick-nav-content">
+            <a href="#age-calculator"><i class="fas fa-user"></i> حساب العمر</a>
+            <a href="#age-difference"><i class="fas fa-users"></i> فرق العمر</a>
+            <a href="#zodiac"><i class="fas fa-star"></i> تحديد الأبراج</a>
+            <a href="#today-date"><i class="fas fa-calendar-day"></i> تاريخ اليوم</a>
+            <a href="#date-converter"><i class="fas fa-sync-alt"></i> محول التاريخ</a>
+            <a href="#date-difference"><i class="fas fa-calendar-minus"></i> فرق بين تاريخين</a>
+            <a href="#time-difference"><i class="fas fa-stopwatch"></i> فرق بين وقتين</a>
+            <a href="#days-counter"><i class="fas fa-calendar-check"></i> عداد الأيام</a>
+            <a href="#bmi-calculator"><i class="fas fa-weight"></i> حساب مؤشر كتلة الجسم</a>
+            <a href="#weight-converter"><i class="fas fa-balance-scale"></i> محول الوزن</a>
+            <a href="#height-converter"><i class="fas fa-ruler"></i> محول الطول</a>
+            <a href="#gpa-calculator"><i class="fas fa-calculator"></i> حساب المعدل التراكمي</a>
+            <a href="#final-grade-calculator"><i class="fas fa-chart-line"></i> معدل التحصيل النهائي</a>
+        </div>
+    </div>
+
+    <main class="container">
+        <!-- Your existing age calculators section -->
+        <section id="age-calculators" class="calculator-section">
+            <h2><i class="fas fa-birthday-cake"></i> حاسبات العمر</h2>
+            
+            <div id="age-calculator" class="calculator-card">
+                <h3>حساب العمر</h3>
+                <div class="calculator-form">
+                    <label for="birth-date-age">تاريخ الميلاد:</label>
+                    <input type="date" id="birth-date-age" required>
+                    <button onclick="calculateAge()">احسب العمر</button>
+                </div>
+                <div id="age-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بحساب عمرك بالسنوات والأشهر والأيام بناءً على تاريخ ميلادك الذي تدخله والتاريخ الحالي. يتم حساب الفرق بين التاريخين بدقة مع الأخذ في الاعتبار عدد الأيام في كل شهر وسنة كبيسة.</p>
+                </div>
+            </div>
+
+            <div id="age-difference" class="calculator-card">
+                <h3>حساب فرق العمر بين شخصين</h3>
+                <div class="calculator-form">
+                    <label for="birth-date-person1">تاريخ ميلاد الشخص الأول:</label>
+                    <input type="date" id="birth-date-person1" required>
+                    
+                    <label for="birth-date-person2">تاريخ ميلاد الشخص الثاني:</label>
+                    <input type="date" id="birth-date-person2" required>
+                    
+                    <button onclick="calculateAgeDifference()">احسب الفرق</button>
+                </div>
+                <div id="age-difference-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بمقارنة تاريخي ميلاد شخصين وحساب الفرق بينهما بالسنوات والأشهر والأيام. يمكن استخدامه لمقارنة أعمار الأصدقاء أو أفراد العائلة أو أي شخصين تريد معرفة الفرق بين أعمارهم.</p>
+                </div>
+            </div>
+
+            <div id="zodiac" class="calculator-card">
+                <h3>تحديد الأبراج بتاريخ الميلاد</h3>
+                <div class="calculator-form">
+                    <label for="birth-date-zodiac">تاريخ الميلاد:</label>
+                    <input type="date" id="birth-date-zodiac" required>
+                    <button onclick="determineZodiac()">حدد البرج</button>
+                </div>
+                <div id="zodiac-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يحدد هذا الحاسب البرج الفلكي الذي تنتمي إليه بناءً على تاريخ ميلادك. يعتمد على تقسيم السنة إلى 12 برجاً، كل برج يغطي فترة زمنية محددة. يتم عرض معلومات إضافية عن خصائص كل برج عند تحديده.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your existing date calculators section -->
+        <section id="date-calculators" class="calculator-section">
+            <h2><i class="fas fa-calendar-alt"></i> حاسبات التاريخ</h2>
+            
+            <div id="today-date" class="calculator-card">
+                <h3>تاريخ اليوم (هجري وميلادي)</h3>
+                <div class="calculator-form">
+                    <button onclick="showTodayDate()">اعرض تاريخ اليوم</button>
+                </div>
+                <div id="today-date-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض هذا الحاسب التاريخ الحالي حسب التقويم الميلادي والهجري معاً. يعتمد التحويل بين التقويمين على معادلات دقيقة تأخذ في الاعتبار الفرق بين السنتين الميلادية والهجرية والذي يبلغ حوالي 11 يوماً في السنة.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>تاريخ اليوم ميلادي</h3>
+                <div class="calculator-form">
+                    <button onclick="showGregorianDate()">اعرض التاريخ الميلادي</button>
+                </div>
+                <div id="gregorian-date-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض التاريخ الحالي حسب التقويم الميلادي (الغريغوري) المستخدم في معظم دول العالم. يتكون هذا التقويم من 12 شهراً، 7 منها تضم 31 يوماً، 4 تضم 30 يوماً، وشهر فبراير الذي يضم 28 أو 29 يوماً في السنة الكبيسة.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>تاريخ اليوم هجري</h3>
+                <div class="calculator-form">
+                    <button onclick="showHijriDate()">اعرض التاريخ الهجري</button>
+                </div>
+                <div id="hijri-date-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض التاريخ الحالي حسب التقويم الهجري (القمري) المستخدم في العديد من الدول الإسلامية. يعتمد هذا التقويم على دورة القمر ويتكون من 12 شهراً قمرياً، كل شهر يبدأ برؤية الهلال وينتهي برؤيته التالية.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>تاريخ الأمس (هجري وميلادي)</h3>
+                <div class="calculator-form">
+                    <button onclick="showYesterdayDate()">اعرض تاريخ الأمس</button>
+                </div>
+                <div id="yesterday-date-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض تاريخ اليوم السابق (الأمس) حسب كلا التقويمين الميلادي والهجري. يتم حساب التاريخ السابق بدقة مع الأخذ في الاعتبار تغيير الشهر والسنة عند الحاجة.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>الشهر الحالي (ميلادي وهجري)</h3>
+                <div class="calculator-form">
+                    <button onclick="showCurrentMonth()">اعرض الشهر الحالي</button>
+                </div>
+                <div id="current-month-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض اسم ورقم الشهر الحالي في كلا التقويمين الميلادي والهجري. كما يعرض معلومات إضافية مثل عدد أيام الشهر الحالي في كل تقويم.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>شهر كم ميلادي</h3>
+                <div class="calculator-form">
+                    <button onclick="showGregorianMonth()">اعرض الشهر الميلادي</button>
+                </div>
+                <div id="gregorian-month-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض اسم ورقم الشهر الحالي في التقويم الميلادي فقط. يمكن استخدامه للتحقق من الشهر الحالي بسرعة دون الحاجة إلى معرفة التاريخ الكامل.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>شهر كم هجري</h3>
+                <div class="calculator-form">
+                    <button onclick="showHijriMonth()">اعرض الشهر الهجري</button>
+                </div>
+                <div id="hijri-month-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يعرض اسم ورقم الشهر الحالي في التقويم الهجري فقط. يمكن استخدامه للتحقق من الشهر الهجري الحالي بسرعة، خاصة للأغراض الدينية مثل معرفة شهر رمضان أو الأشهر الحرم.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Your existing conversion section -->
+        <section id="conversion" class="calculator-section">
+            <h2><i class="fas fa-exchange-alt"></i> محولات التاريخ</h2>
+            
+            <div id="date-converter" class="calculator-card">
+                <h3>محول التاريخ</h3>
+                <div class="converter-tabs">
+                    <button class="tab-btn active" onclick="openTab('to-hijri')">الميلادي إلى الهجري</button>
+                    <button class="tab-btn" onclick="openTab('to-gregorian')">الهجري إلى الميلادي</button>
+                </div>
+
+                <div id="to-hijri" class="tab-content">
+                    <div class="calculator-form">
+                        <label for="gregorian-date">التاريخ الميلادي:</label>
+                        <input type="date" id="gregorian-date">
+                        <button onclick="convertToHijri()">حول إلى هجري</button>
+                    </div>
+                    <div id="to-hijri-result" class="result"></div>
+                    <div class="explanation">
+                        <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                        <p>يقوم بتحويل التاريخ الميلادي المدخل إلى التاريخ الهجري المكافئ. يعتمد التحويل على معادلات دقيقة تأخذ في الاعتبار الفرق بين التقويمين وعدد أيام كل شهر في السنة الهجرية.</p>
+                    </div>
+                </div>
+
+                <div id="to-gregorian" class="tab-content" style="display:none">
+                    <div class="calculator-form">
+                        <label for="hijri-day">اليوم:</label>
+                        <input type="number" id="hijri-day" min="1" max="30" placeholder="1-30">
+                        
+                        <label for="hijri-month">الشهر:</label>
+                        <select id="hijri-month">
+                            <option value="1">محرم</option>
+                            <option value="2">صفر</option>
+                            <option value="3">ربيع الأول</option>
+                            <option value="4">ربيع الثاني</option>
+                            <option value="5">جمادى الأولى</option>
+                            <option value="6">جمادى الآخرة</option>
+                            <option value="7">رجب</option>
+                            <option value="8">شعبان</option>
+                            <option value="9">رمضان</option>
+                            <option value="10">شوال</option>
+                            <option value="11">ذو القعدة</option>
+                            <option value="12">ذو الحجة</option>
+                        </select>
+                        
+                        <label for="hijri-year">السنة:</label>
+                        <input type="number" id="hijri-year" min="1" placeholder="1-1445">
+                        
+                        <button onclick="convertToGregorian()">حول إلى ميلادي</button>
+                    </div>
+                    <div id="to-gregorian-result" class="result"></div>
+                    <div class="explanation">
+                        <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                        <p>يقوم بتحويل التاريخ الهجري المدخل إلى التاريخ الميلادي المكافئ. يعتمد التحويل على معادلات دقيقة تأخذ في الاعتبار الفرق بين التقويمين وعدد أيام كل شهر في السنة الميلادية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your existing time calculators section -->
+        <section id="time-calculators" class="calculator-section">
+            <h2><i class="fas fa-hourglass-half"></i> حاسبات الوقت</h2>
+            
+            <div id="date-difference" class="calculator-card">
+                <h3>حساب الفرق بين تاريخين (ميلادي)</h3>
+                <div class="calculator-form">
+                    <label for="start-date-gregorian">التاريخ الأول:</label>
+                    <input type="date" id="start-date-gregorian" required>
+                    
+                    <label for="end-date-gregorian">التاريخ الثاني:</label>
+                    <input type="date" id="end-date-gregorian" required>
+                    
+                    <button onclick="calculateGregorianDateDifference()">احسب الفرق</button>
+                </div>
+                <div id="gregorian-date-difference-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم بحساب الفرق الزمني بين تاريخين ميلاديين بالسنوات والأشهر والأيام. يمكن استخدامه لحساب المدة بين أي حدثين مهمين، مثل فترة العمل في شركة أو المدة بين عطلتين.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>حساب الفرق بين تاريخين (هجري)</h3>
+                <div class="calculator-form">
+                    <label for="start-date-hijri-day">اليوم الأول:</label>
+                    <input type="number" id="start-date-hijri-day" min="1" max="30" placeholder="1-30">
+                    
+                    <label for="start-date-hijri-month">الشهر الأول:</label>
+                    <select id="start-date-hijri-month">
+                        <option value="1">محرم</option>
+                        <option value="2">صفر</option>
+                        <option value="3">ربيع الأول</option>
+                        <option value="4">ربيع الثاني</option>
+                        <option value="5">جمادى الأولى</option>
+                        <option value="6">جمادى الآخرة</option>
+                        <option value="7">رجب</option>
+                        <option value="8">شعبان</option>
+                        <option value="9">رمضان</option>
+                        <option value="10">شوال</option>
+                        <option value="11">ذو القعدة</option>
+                        <option value="12">ذو الحجة</option>
+                    </select>
+                    
+                    <label for="start-date-hijri-year">السنة الأولى:</label>
+                    <input type="number" id="start-date-hijri-year" min="1" placeholder="1-1445">
+                    
+                    <label for="end-date-hijri-day">اليوم الثاني:</label>
+                    <input type="number" id="end-date-hijri-day" min="1" max="30" placeholder="1-30">
+                    
+                    <label for="end-date-hijri-month">الشهر الثاني:</label>
+                    <select id="end-date-hijri-month">
+                        <option value="1">محرم</option>
+                        <option value="2">صفر</option>
+                        <option value="3">ربيع الأول</option>
+                        <option value="4">ربيع الثاني</option>
+                        <option value="5">جمادى الأولى</option>
+                        <option value="6">جمادى الآخرة</option>
+                        <option value="7">رجب</option>
+                        <option value="8">شعبان</option>
+                        <option value="9">رمضان</option>
+                        <option value="10">شوال</option>
+                        <option value="11">ذو القعدة</option>
+                        <option value="12">ذو الحجة</option>
+                    </select>
+                    
+                    <label for="end-date-hijri-year">السنة الثانية:</label>
+                    <input type="number" id="end-date-hijri-year" min="1" placeholder="1-1445">
+                    
+                    <button onclick="calculateHijriDateDifference()">احسب الفرق</button>
+                </div>
+                <div id="hijri-date-difference-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم بحساب الفرق الزمني بين تاريخين هجريين بالسنوات والأشهر والأيام. يمكن استخدامه لحساب المدة بين أي حدثين مهمين حسب التقويم الهجري، مثل فترة بين عيدين أو مناسبتين دينيتين.</p>
+                </div>
+            </div>
+
+            <div id="time-difference" class="calculator-card">
+                <h3>حساب المدة بين وقتين</h3>
+                <div class="calculator-form">
+                    <label for="start-time">الوقت الأول:</label>
+                    <input type="time" id="start-time" required>
+                    
+                    <label for="end-time">الوقت الثاني:</label>
+                    <input type="time" id="end-time" required>
+                    
+                    <button onclick="calculateTimeDifference()">احسب الفرق</button>
+                </div>
+                <div id="time-difference-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم بحساب الفرق بين وقتين بالساعات والدقائق والثواني. يمكن استخدامه لحساب مدة الاجتماعات أو الوقت المستغرق في إنجاز مهمة ما أو الفترة بين موعدين في اليوم الواحد.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>إضافة مدة إلى وقت وتاريخ</h3>
+                <div class="calculator-form">
+                    <label for="start-datetime-add">التاريخ والوقت الأساسي:</label>
+                    <input type="datetime-local" id="start-datetime-add" required>
+                    
+                    <label for="years-to-add">السنوات:</label>
+                    <input type="number" id="years-to-add" min="0" placeholder="0">
+                    
+                    <label for="months-to-add">الأشهر:</label>
+                    <input type="number" id="months-to-add" min="0" placeholder="0">
+                    
+                    <label for="days-to-add">الأيام:</label>
+                    <input type="number" id="days-to-add" min="0" placeholder="0">
+                    
+                    <label for="hours-to-add">الساعات:</label>
+                    <input type="number" id="hours-to-add" min="0" placeholder="0">
+                    
+                    <label for="minutes-to-add">الدقائق:</label>
+                    <input type="number" id="minutes-to-add" min="0" placeholder="0">
+                    
+                    <button onclick="addDuration()">أضف المدة</button>
+                </div>
+                <div id="add-duration-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم بإضافة مدة زمنية محددة (سنوات، أشهر، أيام، ساعات، دقائق) إلى تاريخ ووقت أساسي. يمكن استخدامه لحساب موعد انتهاء الضمان أو تاريخ استحقاق فاتورة أو موعد نهائي بعد إضافة فترة سماح.</p>
+                </div>
+            </div>
+
+            <div class="calculator-card">
+                <h3>طرح مدة من وقت وتاريخ</h3>
+                <div class="calculator-form">
+                    <label for="start-datetime-subtract">التاريخ والوقت الأساسي:</label>
+                    <input type="datetime-local" id="start-datetime-subtract" required>
+                    
+                    <label for="years-to-subtract">السنوات:</label>
+                    <input type="number" id="years-to-subtract" min="0" placeholder="0">
+                    
+                    <label for="months-to-subtract">الأشهر:</label>
+                    <input type="number" id="months-to-subtract" min="0" placeholder="0">
+                    
+                    <label for="days-to-subtract">الأيام:</label>
+                    <input type="number" id="days-to-subtract" min="0" placeholder="0">
+                    
+                    <label for="hours-to-subtract">الساعات:</label>
+                    <input type="number" id="hours-to-subtract" min="0" placeholder="0">
+                    
+                    <label for="minutes-to-subtract">الدقائق:</label>
+                    <input type="number" id="minutes-to-subtract" min="0" placeholder="0">
+                    
+                    <button onclick="subtractDuration()">اطرح المدة</button>
+                </div>
+                <div id="subtract-duration-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم بطرح مدة زمنية محددة (سنوات، أشهر، أيام، ساعات، دقائق) من تاريخ ووقت أساسي. يمكن استخدامه لحساب تاريخ بداية مشروع إذا عرفت تاريخ نهايته والمدة المطلوبة، أو لتحديد وقت انطلاق رحلة إذا عرفت وقت الوصول.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Your existing days counter section -->
+        <section id="days-counter" class="calculator-section">
+            <h2><i class="fas fa-calendar-check"></i> عداد الأيام</h2>
+            
+            <div class="calculator-card">
+                <h3>عداد الأيام - حساب عدد الأيام المتبقية</h3>
+                <div class="calculator-form">
+                    <label for="target-date">التاريخ المستهدف:</label>
+                    <input type="date" id="target-date" required>
+                    <button onclick="calculateDaysRemaining()">احسب الأيام المتبقية</button>
+                </div>
+                <div id="days-remaining-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم بحساب عدد الأيام المتبقية حتى تاريخ معين من التاريخ الحالي. يمكن استخدامه لعد الأيام المتبقية حتى المناسبات الخاصة مثل الأعياد أو حفلات الزفاف أو مواعيد التسليم النهائية للمشاريع.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Health Calculators Section -->
+        <section id="health-calculators" class="calculator-section">
+            <h2><i class="fas fa-heartbeat"></i> حاسبات صحية</h2>
+            
+            <div id="bmi-calculator" class="calculator-card">
+                <h3>حاسبة مؤشر كتلة الجسم (BMI)</h3>
+                <div class="calculator-form">
+                    <label for="height-bmi">الطول (سم):</label>
+                    <input type="number" id="height-bmi" placeholder="أدخل الطول بالسنتيمتر">
+                    
+                    <label for="weight-bmi">الوزن (كجم):</label>
+                    <input type="number" id="weight-bmi" placeholder="أدخل الوزن بالكيلوجرام">
+                    
+                    <button onclick="calculateBMI()">احسب مؤشر كتلة الجسم</button>
+                </div>
+                <div id="bmi-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بحساب مؤشر كتلة الجسم (BMI) وهو مقياس لدهون الجسم بناءً على الطول والوزن. يتم الحساب بقسمة الوزن بالكيلوجرام على مربع الطول بالمتر. يستخدم هذا المؤشر لتقييم ما إذا كان الشخص يعاني من نقص الوزن، وزن طبيعي، زيادة وزن، أو سمنة.</p>
+                </div>
+            </div>
+
+            <div id="weight-converter" class="calculator-card">
+                <h3>محول الوزن (كجم ←→ رطل)</h3>
+                <div class="calculator-form">
+                    <label for="weight-value">الوزن:</label>
+                    <input type="number" id="weight-value" placeholder="أدخل الوزن">
+                    
+                    <select id="weight-unit">
+                        <option value="kg">كيلوجرام إلى رطل</option>
+                        <option value="lbs">رطل إلى كيلوجرام</option>
+                    </select>
+                    
+                    <button onclick="convertWeight()">تحويل</button>
+                </div>
+                <div id="weight-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بتحويل الوزن بين الوحدات المختلفة (الكيلوجرام والرطل). الرطل الواحد يساوي حوالي 0.453 كيلوجرام، والكيلوجرام الواحد يساوي حوالي 2.205 رطل. يمكن استخدامه لتحويل أوزان الأشخاص أو المواد بين النظامين المتري والإمبراطوري.</p>
+                </div>
+            </div>
+
+            <div id="height-converter" class="calculator-card">
+                <h3>محول الطول (قدم ←→ سم)</h3>
+                <div class="calculator-form">
+                    <label for="height-value">الطول:</label>
+                    <input type="number" id="height-value" placeholder="أدخل الطول">
+                    
+                    <select id="height-unit">
+                        <option value="cm">سنتيمتر إلى قدم</option>
+                        <option value="ft">قدم إلى سنتيمتر</option>
+                    </select>
+                    
+                    <button onclick="convertHeight()">تحويل</button>
+                </div>
+                <div id="height-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بتحويل الطول بين السنتيمتر والقدم والبوصة. القدم الواحد يساوي 30.48 سم، والإنش الواحد يساوي 2.54 سم. يمكن استخدامه لتحويل أطوال الأشخاص أو الأبعاد بين النظامين المتري والإمبراطوري.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Education Calculators Section -->
+        <section id="education-calculators" class="calculator-section">
+            <h2><i class="fas fa-graduation-cap"></i> حاسبات دراسية</h2>
+            
+            <div id="gpa-calculator" class="calculator-card">
+                <h3>حاسبة المعدل التراكمي</h3>
+                <div class="calculator-form">
+                    <div id="grade-inputs">
+                        <div class="grade-row">
+                            <input type="text" class="course-name" placeholder="اسم المادة">
+                            <input type="number" class="course-grade" placeholder="الدرجة (0-100)" min="0" max="100">
+                            <input type="number" class="course-hours" placeholder="عدد الساعات" min="1">
+                        </div>
+                    </div>
+                    <button onclick="addGradeField()">إضافة مادة أخرى</button>
+                    <button onclick="calculateGPA()">حساب المعدل</button>
+                </div>
+                <div id="gpa-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بحساب المعدل التراكمي بناءً على درجات المواد وعدد ساعات كل مادة. يتم ضرب درجة كل مادة بعدد ساعاتها ثم جمع النتائج وقسمتها على مجموع الساعات الكلية. يمكن استخدامه لحساب المعدل الفصلي أو التراكمي للطلاب في مختلف المراحل التعليمية.</p>
+                </div>
+            </div>
+
+            <div id="final-grade-calculator" class="calculator-card">
+                <h3>حاسبة معدل التحصيل النهائي</h3>
+                <div class="calculator-form">
+                    <label for="current-average">المعدل الحالي:</label>
+                    <input type="number" id="current-average" placeholder="أدخل المعدل الحالي" min="0" max="100">
+                    
+                    <label for="current-hours">عدد الساعات المنجزة:</label>
+                    <input type="number" id="current-hours" placeholder="عدد الساعات" min="1">
+                    
+                    <label for="expected-grades">الدرجات المتوقعة (مفصولة بفواصل):</label>
+                    <input type="text" id="expected-grades" placeholder="مثال: 85, 90, 78">
+                    
+                    <label for="new-hours">عدد ساعات المواد الجديدة:</label>
+                    <input type="number" id="new-hours" placeholder="عدد الساعات" min="1">
+                    
+                    <button onclick="calculateFinalGrade()">احسب المعدل النهائي</button>
+                </div>
+                <div id="final-grade-result" class="result"></div>
+                <div class="explanation">
+                    <h4><i class="fas fa-info-circle"></i> كيف يعمل هذا الحاسب؟</h4>
+                    <p>يقوم هذا الحاسب بتوقع المعدل النهائي بناءً على المعدل الحالي وعدد الساعات المنجزة والدرجات المتوقعة في المواد الجديدة. يتم حساب المعدل المرجح الذي يأخذ في الاعتبار الساعات المنجزة والجديدة. يمكن للطلاب استخدامه للتخطيط للفصول القادمة ومعرفة الدرجات التي يحتاجونها لتحقيق أهدافهم الدراسية.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" title="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الموقع</h3>
+                    <p>حاسبات زمنية هو موقع متكامل يوفر مجموعة من الأدوات الذكية لحساب الوقت والتاريخ بكل دقة وسهولة.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#age-calculator">حساب العمر</a></li>
+                        <li><a href="#date-converter">محول التاريخ</a></li>
+                        <li><a href="#time-difference">فرق بين وقتين</a></li>
+                        <li><a href="#days-counter">عداد الأيام</a></li>
+                        <li><a href="#bmi-calculator">حاسبة BMI</a></li>
+                        <li><a href="#gpa-calculator">حاسبة المعدل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>اتصل بنا</h3>
+                    <p><i class="fas fa-envelope"></i> aa3511888@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 حاسبات زمنية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
