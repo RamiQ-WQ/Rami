@@ -658,3 +658,28 @@ main.container,
 #back-to-top {
     z-index: 9998;
 }
+
+
+/* Fix for dropdown (select) visibility - dark background with light text */
+select,
+select option {
+    background-color: #2d3436 !important;
+    color: #f5f6fa !important;
+}
+
+/* For the dropdown arrow visibility (optional - makes it lighter) */
+select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='white'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: left 10px center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-left: 30px;
+}
+
+/* When hovering over an option */
+select option:hover {
+    background-color: #6c5ce7 !important;
+    color: white !important;
+}
