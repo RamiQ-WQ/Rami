@@ -633,3 +633,28 @@ footer {
         text-align: right;
     }
 }
+
+/* Fix for quick navigation dropdown layering issue */
+.quick-nav {
+    z-index: 9999;
+}
+
+.quick-nav-content {
+    z-index: 10000;
+    position: absolute;
+    background-color: var(--dark-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure main content does not overlap above the dropdown */
+main.container,
+.calculator-section,
+.calculator-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* Also fix the back-to-top button if needed */
+#back-to-top {
+    z-index: 9998;
+}
